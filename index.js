@@ -20,7 +20,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 import { Server } from 'socket.io';
 
-const io = new Server('http://localhost:3000')
+const io = new Server('https://hariom-whatsapp.onrender.com', {
+    cors: {
+        origin: `${process.env.FRONTEND_URL}`
+    }
+})
 
 let users = [];
 
