@@ -20,11 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 import { Server } from 'socket.io';
 
-// const io = new Server(9000, {
-//     cors: {
-//         origin: `${process.env.FRONTEND_URL}`
-//     }
-// })
+const io = new Server('http://localhost:3000')
 
 let users = [];
 
