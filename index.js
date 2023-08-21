@@ -20,7 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 import { Server } from 'socket.io';
 
-const io = new Server('https://hariom-whatsapp.onrender.com', {
+const SPORT = process.env.SOCKET_PORT || 9000;  
+const io = new Server(SPORT, {
     cors: {
         origin: `${process.env.FRONTEND_URL}`
     }
