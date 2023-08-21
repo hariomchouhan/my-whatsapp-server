@@ -19,13 +19,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // ################### Socket.io ###################
 
 import { Server } from 'socket.io';
+import http from 'http';
+// const SPORT = process.env.SOCKET_PORT || 9000;  
+// const io = new Server(SPORT, {
+//     cors: {
+//         origin: `${process.env.FRONTEND_URL}`
+//     }
+// })
 
-const SPORT = process.env.SOCKET_PORT || 9000;  
-const io = new Server(SPORT, {
-    cors: {
-        origin: `${process.env.FRONTEND_URL}`
-    }
-})
+const appp = express();
+const server = http.createServer(appp);
+const io = new Server(server);
 
 let users = [];
 
