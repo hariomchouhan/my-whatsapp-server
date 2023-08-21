@@ -1,8 +1,8 @@
 import express from "express";
 import 'dotenv/config';
 import cors from 'cors';
-import { Connection } from "./src/Config/DbConfig.js";
-import route from "./src/routes/route.js";
+import { Connection } from "./Config/DbConfig.js";
+import route from "./routes/route.js";
 import bodyParser from "body-parser";
 
 
